@@ -7,7 +7,7 @@ class YourownDB {
     }
 
     getToken() {
-        return atob('Z2l0aHViX3BhdF8xMUFBWU1HUFpZMHQyRUwxVWRzZUg3X21wb2ZFWWdyZUFsQnlyQURESFlSdlprNDB3MGdGclh4SXZBMDBXck9CZ3VMSXpGVEpMWTJaT0RLNw==');
+        return atob('YOUR-TOKEN-HERE');
     }
 
     async request(method, url, data) {
