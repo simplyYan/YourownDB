@@ -2,12 +2,13 @@ class YourownDB {
     constructor() {
         this.repoOwner = 'simplyYan';
         this.repoName = 'YourownDB';
-        this.apiUrl = `<YOUR-TOKEN-HERE>`;
+        this.apiUrl = `https://api.github.com/repos/${this.repoOwner}/${this.repoName}/contents/saved_dbs`;
         this.token = this.getToken();
     }
 
     getToken() {
-        return atob('YOUR-TOKEN-HERE');
+        // Token is obfuscated for security
+        return atob('<YOUR-TOKEN-HERE>');
     }
 
     async request(method, url, data) {
@@ -91,6 +92,12 @@ class YourownDB {
     async deleteField(dbName, password, encryptionKey, fieldName) {
         const dbContent = await this.getDatabase(dbName, password, encryptionKey);
         delete dbContent.data[fieldName];
+        return this.updateDatabase(dbName, password, encryptionKey, dbContent.data);
+    }
+
+    async createField(dbName, password, encryptionKey, fieldName, fieldValue) {
+        const dbContent = await this.getDatabase(dbName, password, encryptionKey);
+        dbContent.data[fieldName] = fieldValue;
         return this.updateDatabase(dbName, password, encryptionKey, dbContent.data);
     }
 
