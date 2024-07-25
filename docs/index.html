@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourownDB - Secure Browser Database</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: #333;
+        }
+        .header {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(to right, #333, #222);
+        }
+        .header h1 {
+            font-size: 4em;
+        }
+        .feature {
+            padding: 50px 0;
+        }
+        .feature h2 {
+            color: #ff6f61;
+        }
+        .feature p {
+            font-size: 1.2em;
+        }
+        .example, .documentation, .license, .contributing {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .footer {
+            background-color: #333;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">YourownDB</a>
+</nav>
+
+<div class="header">
+    <div class="container">
+        <h1>YourownDB</h1>
+        <p>A secure, lightweight JavaScript library for encrypted databases in the browser, backed by GitHub.</p>
+    </div>
+</div>
+
+<div class="feature">
+    <div class="container">
+        <h2>Main Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Create Databases</h3>
+                <p>Easily create new encrypted databases directly in the browser.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>CRUD Operations</h3>
+                <p>Perform Create, Read, Update, and Delete operations on individual fields.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>GitHub Storage</h3>
+                <p>Store your databases securely in a GitHub repository.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="example bg-dark">
+    <div class="container">
+        <h2>Example Usage</h2>
+        <pre><code class="javascript" style="color: #f8f9fa;">
+const db = new YourownDB();
+
+// Create a new database
+db.createDatabase('myDB', 'myPassword')
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+
+// Access an existing database
+db.getDatabase('myDB', 'myPassword', 'ENCRYPTION_KEY')
+    .then(dbContent => console.log(dbContent))
+    .catch(error => console.error(error));
+
+// Get a specific field
+db.getField('myDB', 'myPassword', 'ENCRYPTION_KEY', 'exampleField')
+    .then(fieldValue => console.log(fieldValue))
+    .catch(error => console.error(error));
+
+// Update a specific field
+db.updateField('myDB', 'myPassword', 'ENCRYPTION_KEY', 'exampleField', 'newValue')
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+
+// Delete a specific field
+db.deleteField('myDB', 'myPassword', 'ENCRYPTION_KEY', 'exampleField')
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+
+// Delete a database
+db.deleteDatabase('myDB')
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+        </code></pre>
+    </div>
+</div>
+
+<div class="documentation">
+    <div class="container">
+        <h2>Documentation</h2>
+        <p>For detailed documentation, visit the <a href="https://github.com/simplyYan/YourownDB/wiki" class="text-info">YourownDB Wiki</a>.</p>
+    </div>
+</div>
+
+<div class="license bg-dark">
+    <div class="container">
+        <h2>License</h2>
+        <p>YourownDB is licensed under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="text-info">CC0-1.0 License</a>.</p>
+    </div>
+</div>
+
+<div class="contributing">
+    <div class="container">
+        <h2>Contributing</h2>
+        <p>We welcome contributions! To contribute, please open a pull request or issue on the <a href="https://github.com/simplyYan/YourownDB" class="text-info">GitHub repository</a>.</p>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <p>&copy; 2024 simplyYan. All rights reserved.</p>
+    </div>
+</div>
+
+<script src="jquery-3.5.1.slim.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+</body>
+</html>
